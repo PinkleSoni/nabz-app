@@ -1,9 +1,6 @@
 {
-  "buildCommand": "expo export --platform web --output-dir public",
+  "buildCommand": "bash build.sh",
   "devCommand": "npm run web",
   "installCommand": "npm install",
-  "outputDirectory": "public",
-  "env": {
-    "NODE_ENV": "production"
-  }
+  "outputDirectory": "public"
 }
