@@ -10,6 +10,19 @@ export const colors = {
   success: '#3B6D11',
   amber: '#BA7517',
   error: '#A32D2D',
+  // Health report specific colors
+  healthBg: '#DFE7EA',
+  healthSurface: '#FFFFFF',
+  healthPrimary: '#3B5BA6',
+  healthNormal: '#F3F8FA',
+  healthFlagged: '#FFF9F0',
+  healthWarning: '#E8B4A6',
+  healthHigh: '#D67C7C',
+  healthLow: '#A6B4D6',
+  healthAccent: '#3B82A6',
+  healthDark: '#12242D',
+  healthSecondary: '#51707C',
+  healthTertiary: '#5C7A86',
 };
 
 export const fonts = {

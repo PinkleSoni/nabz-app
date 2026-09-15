@@ -17,6 +17,8 @@ import EventDetailsForm from '../screens/host/EventDetailsForm';
 import PreviewPublish from '../screens/host/PreviewPublish';
 import LiveConfirmation from '../screens/host/LiveConfirmation';
 
+import HealthNavigator from './HealthNavigator';
+
 const Tab = createBottomTabNavigator();
 const DiscoverStack = createStackNavigator();
 const MyEventsStack = createStackNavigator();
@@ -66,6 +68,13 @@ const linking = {
         },
       },
       'My Events': 'my-events',
+      Health: {
+        screens: {
+          HealthReports: 'health',
+          ReportDetail: 'health/report/:reportId',
+          ResultDetail: 'health/result/:resultId',
+        },
+      },
       Host: {
         screens: {
           HomeFeedHost: 'host',
@@ -100,6 +109,7 @@ export default function AppNavigator() {
       >
         <Tab.Screen name="Discover" component={DiscoverNavigator} />
         <Tab.Screen name="My Events" component={MyEventsNavigator} />
+        <Tab.Screen name="Health" component={HealthNavigator} />
         <Tab.Screen name="Host" component={HostNavigator} />
       </Tab.Navigator>
     </NavigationContainer>
