@@ -1,7 +1,8 @@
 {
-  "buildCommand": "npm run build:web || echo 'No build command'",
+  "buildCommand": "expo export --platform web",
   "devCommand": "npm run web",
   "installCommand": "npm install",
+  "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production"
   }
