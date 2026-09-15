@@ -1,6 +1,14 @@
 {
-  "buildCommand": "bash build.sh",
+  "buildCommand": "npm install && bash build.sh",
   "devCommand": "npm run web",
-  "installCommand": "npm install",
-  "outputDirectory": "public"
+  "installCommand": "npm install --legacy-peer-deps",
+  "outputDirectory": "public",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 60
+    }
+  }
 }
