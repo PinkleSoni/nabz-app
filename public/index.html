@@ -1,139 +1,795 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nabz Health Report App</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #DFE7EA;
-            color: #12242D;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h1 {
-            font-size: 48px;
-            color: #3B5BA6;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 18px;
-            color: #51707C;
-            margin-bottom: 30px;
-        }
-        .subtitle-hi {
-            font-size: 16px;
-            color: #51707C;
-            margin-bottom: 30px;
-        }
-        .status {
-            background: #E8F4F1;
-            color: #1A6B5A;
-            padding: 12px 16px;
-            border-radius: 6px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-        .section {
-            margin: 30px 0;
-            padding: 20px;
-            background: #F3F8FA;
-            border-radius: 8px;
-            border-left: 4px solid #3B5BA6;
-        }
-        .section h2 {
-            color: #12242D;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .section li {
-            padding: 8px 0;
-            color: #51707C;
-        }
-        .section li:before {
-            content: "✓ ";
-            color: #3B5BA6;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #DBE4E8;
-            color: #51707C;
-            font-size: 14px;
-        }
-        .footer a {
-            color: #3B5BA6;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Nabz</h1>
-        <p class="subtitle">Your laboratory report, read in plain words.</p>
-        <p class="subtitle-hi">आपकी लैब रिपोर्ट, आसान शब्दों में।</p>
+<x-dc>
+<helmet data-dc-atomics><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+body{margin:0;background:#dfe7ea;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:oklch(0.45 0.09 234);text-decoration:none}
+a:hover{color:oklch(0.36 0.09 234)}
+::-webkit-scrollbar{width:0}
+@keyframes nabzload{from{width:0}to{width:100%}}
+</style></helmet>
 
-        <div class="status">✅ App Deployed & Running</div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12242d"></rect><text x="50" y="58" font-family="system-ui, sans-serif" font-size="26" font-weight="600" fill="#ffffff" text-anchor="middle">Nabz</text><rect x="41" y="66" width="18" height="2.5" fill="#3b82a6"></rect></svg></template>
 
-        <div class="section">
-            <h2>About Nabz</h2>
-            <p>Nabz is a React Native health report application that makes laboratory test results easy to understand. We present complex medical data in simple, actionable insights available in both English and Hindi.</p>
-        </div>
+<div style="min-height:{{ outerMinH }};display:flex;align-items:flex-start;justify-content:center;padding:{{ outerPad }};background:{{ outerBg }}">
+<div style="width:360px;height:{{ phoneH }};flex:none;background:#ffffff;border:1px solid #c6d3d8;display:flex;flex-direction:column;overflow:hidden;position:relative;color:#12242d">
 
-        <div class="section">
-            <h2>Features</h2>
-            <ul>
-                <li>View all your laboratory reports in one place</li>
-                <li>Easily identify abnormal test results with flagging</li>
-                <li>Bilingual support (English & Hindi)</li>
-                <li>Responsive design for mobile and desktop</li>
-                <li>Categorized test results by type</li>
-            </ul>
-        </div>
+<div style="flex:none;height:24px;background:#ffffff;border-bottom:1px solid #eaf1f3;display:flex;align-items:center;justify-content:space-between;padding:0 10px;font-size:10px;color:#5c7a86;letter-spacing:.02em;white-space:nowrap">
+<span style="flex:none">21:04</span><span style="flex:none">Nabz</span><span style="flex:none">LTE 34%</span>
+</div>
 
-        <div class="section">
-            <h2>Technology Stack</h2>
-            <ul>
-                <li>React Native - Cross-platform mobile framework</li>
-                <li>Expo - React Native platform</li>
-                <li>React Navigation - Navigation management</li>
-                <li>Vercel - Hosting & deployment</li>
-            </ul>
-        </div>
+<div style="flex:{{ scFlex }};min-height:0;overflow-y:{{ scOv }};overflow-x:hidden">
 
-        <div class="section">
-            <h2>Project Status</h2>
-            <p>✅ Nabz Health Report app is deployed and live!</p>
-            <p style="margin-top: 10px;">
-                Repository: <a href="https://github.com/PinkleSoni/nabz-app" target="_blank">github.com/PinkleSoni/nabz-app</a>
-            </p>
-        </div>
+<sc-if value="{{ isSplash }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ goHome }}" style="min-height:{{ splashMinH }};display:flex;flex-direction:column;justify-content:center;padding:0 32px;cursor:pointer;background:#fff">
+<div style="font-size:46px;font-weight:600;letter-spacing:-0.03em;line-height:1;color:#12242d">Nabz</div>
+<div style="width:32px;height:3px;background:oklch(0.44 0.085 234);margin-top:18px"></div>
+<div style="font-size:14px;line-height:1.5;color:#28424d;margin-top:18px">Your laboratory report,<br>read in plain words.</div>
+<div style="font-size:13px;line-height:1.6;color:#51707c;margin-top:6px">आपकी लैब रिपोर्ट, आसान शब्दों में।</div>
+<div style="margin-top:44px;height:2px;background:#e2ebee">
+<div style="height:2px;background:oklch(0.44 0.085 234);animation:nabzload 1.5s linear forwards"></div>
+</div>
+<div style="font-size:11.5px;color:#5c7a86;margin-top:10px">Opening your report from 11 Sep 2026</div>
+<div style="font-size:12px;color:#5c7a86;margin-top:3px">11 सितंबर 2026 की आपकी रिपोर्ट खोली जा रही है</div>
+</div>
+</sc-if>
 
-        <div class="footer">
-            <p>🏥 Nabz - Making Lab Reports Simple & Understandable</p>
-            <p style="margin-top: 10px;">Deployed on <a href="https://vercel.com" target="_blank">Vercel</a> | Built with React Native + Expo</p>
-        </div>
-    </div>
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div>
+<sc-if value="{{ isOffline }}" hint-placeholder-val="{{ false }}">
+<div style="background:#edf3f5;border-bottom:1px solid #c6d3d8;padding:11px 14px 12px">
+<div style="font-size:12.5px;line-height:1.45;color:#12242d">{{ offlineLine }}</div>
+<div style="font-size:12px;line-height:1.5;color:#51707c;margin-top:2px">{{ offlineLineHi }}</div>
+<div style="font-size:11.5px;color:#5c7a86;margin-top:6px">{{ offlineStamp }}</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isBlocked }}" hint-placeholder-val="{{ false }}">
+<div style="padding:22px 14px 26px">
+<div style="font-size:17px;font-weight:600;line-height:1.35;letter-spacing:-0.01em;text-wrap:pretty">{{ blockedTitle }}</div>
+<div style="font-size:14px;line-height:1.45;color:#51707c;margin-top:4px;text-wrap:pretty">{{ blockedTitleHi }}</div>
+<div style="font-size:13px;line-height:1.6;color:#28424d;margin-top:14px;text-wrap:pretty">{{ blockedBody }}</div>
+<div style="font-size:12.5px;line-height:1.6;color:#51707c;margin-top:4px;text-wrap:pretty">{{ blockedBodyHi }}</div>
+<div style="font-size:11.5px;color:#5c7a86;margin-top:14px">{{ blockedMeta }}</div>
+<div style="display:flex;margin-top:22px">
+<div role="button" tabindex="0" onClick="{{ retry }}" style="min-height:48px;display:flex;align-items:center;justify-content:center;padding:0 26px;border:1px solid oklch(0.44 0.085 234);color:oklch(0.44 0.085 234);font-size:14px;font-weight:600;cursor:pointer;background:#fff" style-hover="background:#eef4f7">
+<div>Try again<span style="font-weight:400;color:#51707c"> · दोबारा कोशिश करें</span></div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+<div style="padding:16px 14px 24px">
+<div style="font-size:14px;line-height:1.45;color:#12242d">Loading your report</div>
+<div style="font-size:13px;line-height:1.55;color:#51707c;margin-top:3px">आपकी रिपोर्ट खुल रही है</div>
+<div style="font-size:12.5px;line-height:1.5;color:#51707c;margin-top:9px">This can take a while on a slow connection. Nothing is lost if you wait.</div>
+<div style="font-size:12px;line-height:1.55;color:#51707c;margin-top:2px">धीमे नेटवर्क पर इसमें समय लग सकता है। इंतज़ार करने से कुछ नहीं खोता।</div>
+<div style="margin-top:14px;height:2px;background:#e2ebee">
+<div style="height:2px;width:38%;background:oklch(0.44 0.085 234)"></div>
+</div>
+<div style="font-size:11.5px;color:#5c7a86;margin-top:7px">16 of 42 results · 16 / 42 जाँचें</div>
+
+<div style="margin-top:22px;height:11px;width:86px;background:#e2ebee"></div>
+<div style="margin-top:14px;border-top:1px solid #dbe4e8">
+<div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eef4f6"><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="height:11px;width:62%;background:#e8eff2"></div><div style="height:11px;width:40%;background:#eff4f6"></div></div><div style="width:44px;display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div style="height:11px;width:32px;background:#e8eff2"></div><div style="height:11px;width:20px;background:#eff4f6"></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eef4f6"><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="height:11px;width:62%;background:#e8eff2"></div><div style="height:11px;width:40%;background:#eff4f6"></div></div><div style="width:44px;display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div style="height:11px;width:32px;background:#e8eff2"></div><div style="height:11px;width:20px;background:#eff4f6"></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eef4f6"><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="height:11px;width:62%;background:#e8eff2"></div><div style="height:11px;width:40%;background:#eff4f6"></div></div><div style="width:44px;display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div style="height:11px;width:32px;background:#e8eff2"></div><div style="height:11px;width:20px;background:#eff4f6"></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eef4f6"><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="height:11px;width:62%;background:#e8eff2"></div><div style="height:11px;width:40%;background:#eff4f6"></div></div><div style="width:44px;display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div style="height:11px;width:32px;background:#e8eff2"></div><div style="height:11px;width:20px;background:#eff4f6"></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eef4f6"><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="height:11px;width:62%;background:#e8eff2"></div><div style="height:11px;width:40%;background:#eff4f6"></div></div><div style="width:44px;display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div style="height:11px;width:32px;background:#e8eff2"></div><div style="height:11px;width:20px;background:#eff4f6"></div></div></div>
+<div style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eef4f6"><div style="flex:1;display:flex;flex-direction:column;gap:5px"><div style="height:11px;width:62%;background:#e8eff2"></div><div style="height:11px;width:40%;background:#eff4f6"></div></div><div style="width:44px;display:flex;flex-direction:column;gap:5px;align-items:flex-end"><div style="height:11px;width:32px;background:#e8eff2"></div><div style="height:11px;width:20px;background:#eff4f6"></div></div></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showList }}" hint-placeholder-val="{{ true }}">
+<div>
+<div style="padding:16px 14px 12px;background:#ffffff;border-bottom:1px solid #dbe4e8">
+<div style="display:flex;align-items:baseline;gap:9px">
+<div style="font-size:19px;font-weight:600;letter-spacing:-0.01em">Your report</div>
+<div style="font-size:14px;color:#51707c">आपकी रिपोर्ट</div>
+</div>
+<div style="font-size:12px;color:#51707c;margin-top:4px">Sunita Deshmukh · 52 F · 11 Sep 2026</div>
+</div>
+
+<sc-if value="{{ noneFlagged }}" hint-placeholder-val="{{ false }}">
+<div style="background:#f3f8fa;border-bottom:1px solid #dbe4e8;padding:16px 14px 18px">
+<div style="font-size:14px;line-height:1.45;color:#12242d">{{ normalLine }}</div>
+<div style="font-size:12.5px;line-height:1.55;color:#51707c;margin-top:3px">{{ normalLineHi }}</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ hasFlagged }}" hint-placeholder-val="{{ true }}">
+<div style="background:#f3f8fa;border-bottom:1px solid #dbe4e8;padding:16px 14px 4px">
+<div style="display:flex;align-items:baseline;gap:8px">
+<div style="font-size:15px;font-weight:600;letter-spacing:-0.01em">{{ flaggedHeading }}</div>
+<div style="font-size:12.5px;color:#51707c">{{ flaggedHeadingHi }}</div>
+<div style="flex:1"></div>
+<div style="font-size:11.5px;color:#51707c">{{ flaggedRatio }}</div>
+</div>
+<div style="font-size:11.5px;color:#51707c;margin-top:4px">Outside the range is not a diagnosis.</div>
+<div style="font-size:12px;line-height:1.5;color:#51707c;margin-top:2px">सामान्य सीमा से बाहर होना कोई रोग-निदान नहीं है।</div>
+<div style="margin-top:12px">
+<sc-for list="{{ flaggedRows }}" as="f" hint-placeholder-count="4">
+<div onClick="{{ f.open }}" style="display:flex;align-items:stretch;margin-bottom:8px;background:#fff;border:1px solid #dbe4e8;cursor:pointer">
+<div style="width:4px;flex:none;background:{{ f.railColor }}"></div>
+<div style="flex:1;min-width:0;display:grid;grid-template-columns:{{ f.colSpan }};align-items:center;gap:8px;padding:11px 11px 11px 10px">
+<div style="min-width:0">
+<div style="font-size:13.5px;line-height:1.25;font-weight:600">{{ f.name }}</div>
+<div style="font-size:12px;line-height:1.35;color:#51707c;margin-top:2px">{{ f.hi }}</div>
+</div>
+<div style="text-align:right">
+<div style="font-size:15px;font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums">{{ f.value }}</div>
+<div style="font-size:10px;line-height:1.3;color:#51707c;margin-top:1px">{{ f.unit }}</div>
+</div>
+<div style="text-align:right;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:{{ f.tierColor }}">{{ f.tierWord }}</div>
+</div>
+</div>
+</sc-for>
+<sc-if value="{{ hasMoreFlagged }}" hint-placeholder-val="{{ false }}">
+<div style="padding:2px 0 10px;font-size:11.5px;color:#51707c">{{ moreFlaggedLine }}</div>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+<div style="padding:20px 14px 2px">
+<div style="display:flex;align-items:baseline;gap:9px">
+<div style="font-size:15px;font-weight:600;letter-spacing:-0.01em">All results</div>
+<div style="font-size:13px;color:#51707c">सभी परिणाम</div>
+</div>
+<div style="font-size:12px;color:#51707c;margin-top:3px">{{ allResultsLine }}</div>
+<sc-if value="{{ sparse }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:10px;border-top:1px solid #dbe4e8;padding-top:10px">
+<div style="font-size:12.5px;line-height:1.5;color:#28424d">{{ sparseNote }}</div>
+<div style="font-size:12px;line-height:1.55;color:#51707c;margin-top:2px">{{ sparseNoteHi }}</div>
+</div>
+</sc-if>
+</div>
+
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="7">
+<div style="margin-top:18px">
+<div style="position:sticky;top:0;z-index:2;display:flex;align-items:baseline;gap:7px;padding:7px 14px 6px;background:#f3f8fa;border-top:1px solid #dbe4e8;border-bottom:1px solid #c6d3d8">
+<div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase">{{ g.name }}</div>
+<div style="font-size:12px;color:#51707c">{{ g.hi }}</div>
+<div style="flex:1"></div>
+<div style="font-size:10px;color:#5c7a86;letter-spacing:.04em">{{ g.countLabel }}</div>
+</div>
+<sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="6">
+<div onClick="{{ r.open }}" style="display:flex;align-items:stretch;border-bottom:1px solid #eef4f6;background:{{ r.rowBg }};cursor:{{ r.cursor }}">
+<div style="width:4px;flex:none;background:{{ r.railColor }}"></div>
+<div style="flex:1;min-width:0;display:grid;grid-template-columns:{{ r.colSpan }};align-items:center;gap:8px;padding:{{ r.padY }} 11px {{ r.padY }} 10px">
+<div style="min-width:0">
+<div style="font-size:12.5px;line-height:1.25">{{ r.name }}</div>
+<div style="font-size:12px;line-height:1.35;color:#51707c;margin-top:2px">{{ r.hi }}</div>
+</div>
+<div style="text-align:right">
+<div style="font-size:13.5px;font-weight:600;line-height:1.15;font-variant-numeric:tabular-nums">{{ r.value }}</div>
+<div style="font-size:10px;line-height:1.3;color:#51707c;margin-top:1px">{{ r.unit }}</div>
+</div>
+<div style="text-align:right;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:{{ r.tierColor }}">{{ r.tierWord }}</div>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+
+<div style="height:26px"></div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+<div>
+<div style="padding:12px 14px;border-bottom:1px solid #dbe4e8;display:flex;align-items:center;gap:10px">
+<div onClick="{{ goHome }}" style="font-size:15px;cursor:pointer;color:#375561;padding:4px 6px 4px 0">←</div>
+<div style="font-size:13px;font-weight:600">One result</div>
+<div style="font-size:12.5px;color:#51707c">एक जाँच</div>
+</div>
+
+<div style="padding:18px 14px 0">
+<div style="font-size:21px;font-weight:600;letter-spacing:-0.01em;line-height:1.2">{{ res.name }}</div>
+<div style="font-size:13.5px;color:#51707c;margin-top:3px">{{ res.hi }}</div>
+<div style="font-size:13.5px;line-height:1.55;margin-top:12px;color:#28424d">{{ res.measures }}</div>
+<div style="font-size:13px;line-height:1.65;margin-top:6px;color:#3f5f6b">{{ res.measuresHi }}</div>
+</div>
+
+<div style="margin:16px 14px 0;border:1px solid {{ res.tierColor }};background:{{ res.tierBg }}">
+<div style="padding:10px 12px 11px">
+<div style="display:flex;align-items:baseline;gap:7px">
+<div style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:{{ res.tierColor }}">{{ res.tierWord }}</div>
+<div style="font-size:12.5px;color:{{ res.tierColor }}">{{ res.tierHi }}</div>
+</div>
+<div style="display:flex;align-items:flex-end;gap:8px;margin-top:6px">
+<div style="font-size:32px;font-weight:600;line-height:1;letter-spacing:-0.02em">{{ res.value }}</div>
+<div style="font-size:13px;color:#3f5f6b;padding-bottom:3px">{{ res.unit }}</div>
+</div>
+<div style="font-size:12.5px;color:#28424d;margin-top:8px;line-height:1.5">{{ res.statusLine }}</div>
+<div style="font-size:12.5px;color:#3f5f6b;margin-top:3px;line-height:1.6">{{ res.statusHi }}</div>
+</div>
+</div>
+
+<div style="margin:18px 14px 0">
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:9px">
+<div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#51707c">Where your number sits</div>
+<div style="font-size:12.5px;color:#51707c">आपका मान कहाँ है</div>
+</div>
+<div style="position:relative;height:34px">
+<div style="position:absolute;left:0;right:0;top:14px;height:8px;background:#e2ebee;border:1px solid #cfdce1"></div>
+<div style="position:absolute;top:14px;height:8px;background:#cfe3dd;border:1px solid #9fc4ba;left:{{ res.bandLeft }};width:{{ res.bandWidth }}"></div>
+<div style="position:absolute;top:6px;width:2px;height:24px;background:{{ res.tierColor }};left:{{ res.markLeft }}"></div>
+</div>
+<div style="display:flex;justify-content:space-between;gap:8px;font-size:10.5px;color:#51707c;margin-top:-2px;white-space:nowrap">
+<span style="flex:none">{{ res.scaleMin }}</span><span style="flex:none">{{ res.scaleMax }}</span>
+</div>
+<div style="font-size:12px;color:#3f5f6b;margin-top:8px;line-height:1.5">Normal range · सामान्य सीमा: {{ res.range }} {{ res.unit }}</div>
+</div>
+
+<div style="margin:20px 14px 0;border-top:1px solid #dbe4e8;padding-top:14px">
+<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:10px">
+<div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#51707c">Change since your last report</div>
+<div style="font-size:12.5px;color:#51707c">पिछली रिपोर्ट से बदलाव</div>
+</div>
+<div style="display:flex;align-items:stretch;border:1px solid #dbe4e8;background:#fff">
+<div style="flex:1;padding:11px 12px;border-right:1px solid #e8eff2">
+<div style="font-size:10.5px;color:#51707c">12 Jun 2026</div>
+<div style="font-size:19px;font-weight:600;margin-top:3px">{{ res.prev }}</div>
+</div>
+<div style="flex:none;width:52px;display:flex;align-items:center;justify-content:center;font-size:15px;color:{{ res.dirColor }};border-right:1px solid #e8eff2">{{ res.dirGlyph }}</div>
+<div style="flex:1;padding:11px 12px">
+<div style="font-size:10.5px;color:#51707c">11 Sep 2026</div>
+<div style="font-size:19px;font-weight:600;margin-top:3px">{{ res.value }}</div>
+</div>
+</div>
+</div>
+
+<div style="margin:18px 14px 0;border:1px solid #dbe4e8;padding:11px 12px 12px">
+<div style="font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:#5c7a86">How this explanation was written</div>
+<div style="font-size:12px;color:#5c7a86;margin-top:2px">यह व्याख्या कैसे लिखी गई</div>
+<div style="font-size:12.5px;line-height:1.55;color:#28424d;margin-top:8px">The plain-English and Hindi wording above is machine-written from the test name, then checked by a doctor before release. Your own numbers are never sent anywhere to produce it.</div>
+<div style="font-size:12px;line-height:1.6;color:#3f5f6b;margin-top:5px">ऊपर की आसान भाषा मशीन से लिखी गई है और जारी करने से पहले डॉक्टर ने जाँची है। आपके मान इसके लिए कहीं नहीं भेजे जाते।</div>
+<div style="font-size:12px;line-height:1.55;color:#5c7a86;margin-top:8px">It never reads your values, never ranks your results, never names a condition and never tells you what to do.</div>
+<div style="font-size:12px;line-height:1.6;color:#5c7a86;margin-top:3px">यह आपके मान नहीं पढ़ता, परिणामों को क्रम नहीं देता, किसी रोग का नाम नहीं बताता और कोई सलाह नहीं देता।</div>
+<div style="margin-top:10px;font-size:12px;color:oklch(0.44 0.085 234);cursor:pointer">These words are confusing · ये शब्द समझ नहीं आए</div>
+</div>
+
+<div style="margin:20px 14px 0;padding:11px 12px;background:#edf3f5;border:1px solid #dbe4e8">
+<div style="font-size:12.5px;line-height:1.55;color:#28424d">This is one measurement. It does not name a condition on its own. A doctor reads it together with your other results and your history.</div>
+<div style="font-size:12.5px;line-height:1.65;color:#3f5f6b;margin-top:6px">यह एक ही जाँच का मान है। अकेले यह किसी रोग का नाम नहीं बताता। डॉक्टर इसे आपकी बाकी जाँचों और इतिहास के साथ मिलाकर पढ़ते हैं।</div>
+</div>
+
+<div style="height:28px"></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isCompare }}" hint-placeholder-val="{{ false }}">
+<div>
+<div style="padding:16px 14px 12px;border-bottom:1px solid #dbe4e8">
+<div style="display:flex;align-items:baseline;gap:9px">
+<div style="font-size:19px;font-weight:600;letter-spacing:-0.01em">Then and now</div>
+<div style="font-size:14px;color:#51707c">तब और अब</div>
+</div>
+<div style="font-size:12px;color:#51707c;margin-top:4px">12 Jun 2026 → 11 Sep 2026</div>
+<div style="font-size:12px;color:#51707c;margin-top:7px;line-height:1.5">{{ noPrevLine }}</div>
+</div>
+
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="7">
+<div style="margin-top:16px">
+<div style="position:sticky;top:0;z-index:2;display:flex;align-items:baseline;gap:7px;padding:7px 14px 6px;background:#f3f8fa;border-top:1px solid #dbe4e8;border-bottom:1px solid #c6d3d8">
+<div style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase">{{ g.name }}</div>
+<div style="font-size:12px;color:#51707c">{{ g.hi }}</div>
+</div>
+<sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="6">
+<div>
+<div style="display:grid;grid-template-columns:{{ r.cmpCols }};align-items:center;gap:6px;border-bottom:1px solid #eef4f6;padding:9px 14px">
+<div style="min-width:0">
+<div style="font-size:12.5px;line-height:1.25">{{ r.name }}</div>
+<div style="font-size:12px;line-height:1.35;color:#51707c;margin-top:2px">{{ r.hi }}</div>
+</div>
+<sc-if value="{{ r.hasPrev }}" hint-placeholder-val="{{ true }}">
+<div style="display:contents">
+<div style="text-align:right;font-size:12px;color:#51707c;font-variant-numeric:tabular-nums">{{ r.prev }}</div>
+<div style="text-align:center;font-size:11px;color:{{ r.dirColor }}">{{ r.dirGlyph }}</div>
+<div style="text-align:right;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">{{ r.value }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ r.noPrev }}" hint-placeholder-val="{{ false }}">
+<div style="display:contents">
+<div style="grid-column:2 / span 2;text-align:right;font-size:10.5px;color:#51707c;line-height:1.25">no previous<br>data</div>
+<div style="text-align:right;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">{{ r.value }}</div>
+</div>
+</sc-if>
+</div>
+<sc-if value="{{ r.isPrompt }}" hint-placeholder-val="{{ false }}">
+<div style="border-left:4px solid oklch(0.45 0.13 32);border-bottom:1px solid #dbe4e8;background:#f3f8fa;padding:13px 14px 15px">
+<div style="font-size:13.5px;font-weight:600;line-height:1.4;color:#12242d">Take this to a doctor.</div>
+<div style="font-size:12.5px;line-height:1.5;color:#3f5f6b;margin-top:2px">डॉक्टर को यह रिपोर्ट दिखाइए।</div>
+<div style="font-size:11.5px;line-height:1.45;color:#5c7a86;margin-top:8px">{{ promptCount }}</div>
+<div style="font-size:12px;line-height:1.55;color:#5c7a86">{{ promptCountHi }}</div>
+
+<sc-if value="{{ hasOthers }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:11px;border-top:1px solid #c6d3d8;padding-top:8px">
+<div style="font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5c7a86">Also outside the range</div>
+<div style="font-size:12px;color:#5c7a86;margin-top:1px">ये भी सामान्य सीमा से बाहर हैं</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto 14px auto;align-items:center;column-gap:6px">
+<sc-for list="{{ promptRows }}" as="p" hint-placeholder-count="3">
+<div style="display:contents">
+<div style="min-width:0;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;padding:7px 0;border-bottom:1px solid #eef4f6">
+<div style="font-size:12px;line-height:1.3">{{ p.name }}</div>
+<div style="font-size:12px;line-height:1.3;color:{{ p.tierColor }}">{{ p.tierHi }}</div>
+</div>
+<div style="text-align:right;font-size:11.5px;color:#5c7a86;font-variant-numeric:tabular-nums;padding:7px 0;border-bottom:1px solid #eef4f6">{{ p.prev }}</div>
+<div style="text-align:center;font-size:10px;color:{{ p.tierColor }};padding:7px 0;border-bottom:1px solid #eef4f6">{{ p.dirGlyph }}</div>
+<div style="text-align:right;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;padding:7px 0;border-bottom:1px solid #eef4f6">{{ p.value }}</div>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{ promptMore }}" hint-placeholder-val="{{ false }}">
+<div style="padding:7px 0 0;font-size:11px;color:#5c7a86">{{ promptMoreLine }}</div>
+</sc-if>
+</div>
+</sc-if>
+<div onClick="{{ goReport }}" style="margin-top:12px;padding:13px;background:oklch(0.44 0.085 234);text-align:center;cursor:pointer">
+<div style="font-size:13px;font-weight:600;letter-spacing:.01em;color:#ffffff">Open report to share</div>
+<div style="font-size:12px;color:#ffffff;margin-top:1px">रिपोर्ट खोलें</div>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</sc-for>
+
+<sc-if value="{{ noneFlagged }}" hint-placeholder-val="{{ false }}">
+<div style="margin:20px 14px 0;border-top:1px solid #dbe4e8;padding-top:14px">
+<div style="font-size:12.5px;line-height:1.5;color:#28424d">You can still share the full report.</div>
+<div style="font-size:11.5px;line-height:1.5;color:#51707c;margin-top:2px">आप पूरी रिपोर्ट साझा कर सकती हैं।</div>
+<div onClick="{{ goReport }}" style="margin-top:12px;padding:13px;background:oklch(0.44 0.085 234);text-align:center;cursor:pointer">
+<div style="font-size:13px;font-weight:600;letter-spacing:.01em;color:#ffffff">Open report to share</div>
+<div style="font-size:12px;color:#ffffff;margin-top:1px">रिपोर्ट खोलें</div>
+</div>
+</div>
+</sc-if>
+
+<div style="height:26px"></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isReport }}" hint-placeholder-val="{{ false }}">
+<div style="background:#fff;min-height:100%">
+<div style="padding:12px 14px;border-bottom:1px solid #dbe4e8;display:flex;align-items:center;gap:10px;background:#ffffff">
+<div onClick="{{ goCompare }}" style="font-size:15px;cursor:pointer;color:#375561;padding:4px 6px 4px 0">←</div>
+<div><div style="font-size:13px;font-weight:600;line-height:1.2">Report to share</div><div style="font-size:12px;color:#51707c">साझा करने योग्य रिपोर्ट</div></div>
+<div style="flex:1"></div>
+<div style="font-size:12px;font-weight:500;color:oklch(0.44 0.085 234);border:1px solid oklch(0.82 0.04 234);padding:5px 10px;cursor:pointer">Share</div>
+</div>
+
+<div style="padding:16px 14px 12px;border-bottom:2px solid oklch(0.44 0.085 234)">
+<div style="font-size:15px;font-weight:600;letter-spacing:.01em">SAHYADRI DIAGNOSTICS</div>
+<div style="font-size:10.5px;color:#51707c;margin-top:2px">Karve Road, Pune 411004 · NABL M-0847</div>
+<div style="display:flex;flex-wrap:wrap;gap:2px 0;margin-top:11px;font-size:11px;line-height:1.5">
+<div style="width:50%"><span style="color:#51707c">Name </span>Sunita Deshmukh</div>
+<div style="width:50%"><span style="color:#51707c">Age/Sex </span>52 / F</div>
+<div style="width:50%"><span style="color:#51707c">Ref. No </span>SD-26-114872</div>
+<div style="width:50%"><span style="color:#51707c">Referred by </span>Self</div>
+<div style="width:50%"><span style="color:#51707c">Collected </span>11 Sep 2026, 08:10</div>
+<div style="width:50%"><span style="color:#51707c">Reported </span>11 Sep 2026, 17:45</div>
+</div>
+</div>
+
+<div style="position:sticky;top:0;z-index:3;background:#fff;display:flex;padding:7px 14px;border-bottom:1px solid #12242d;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#3f5f6b">
+<div style="flex:1">Investigation</div>
+<div style="flex:none;width:76px;text-align:right">Result</div>
+<div style="flex:none;width:88px;text-align:right">Reference</div>
+</div>
+
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="7">
+<div>
+<div style="position:sticky;top:26px;z-index:2;background:#f3f8fa;padding:6px 14px;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#12242d;border-top:1px solid #dbe4e8;border-bottom:1px solid #dbe4e8">{{ g.reportName }}</div>
+<sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="6">
+<div style="display:flex;align-items:flex-start;padding:6px 14px;border-bottom:1px solid #eaf1f3">
+<div style="flex:1;min-width:0;padding-right:6px">
+<div style="font-size:12px;line-height:1.3">{{ r.name }}</div>
+<div style="font-size:12px;line-height:1.35;color:#51707c">{{ r.hi }}</div>
+</div>
+<div style="flex:none;width:76px;text-align:right;font-size:12px;line-height:1.3;font-variant-numeric:tabular-nums">{{ r.value }}<div style="font-size:10.5px;color:#51707c;line-height:1.3">{{ r.unit }}</div></div>
+<div style="flex:none;width:88px;text-align:right;font-size:11px;line-height:1.3;color:#375561;padding-top:1px">{{ r.range }}</div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+
+<div style="padding:14px;border-top:1px solid #c6d3d8;margin-top:4px">
+<div style="font-size:10.5px;color:#51707c;line-height:1.55">42 investigations. Reference ranges as supplied by the laboratory for adult females.</div>
+<div style="margin-top:14px;font-size:10.5px;color:#51707c">Dr. A. R. Kulkarni, MD (Path) · Reg. 2004/06/2188</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+
+<sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+<div style="flex:none;display:flex;border-top:1px solid #c6d3d8;background:#edf3f5">
+<div onClick="{{ goHome }}" aria-disabled="{{ navDead }}" style="flex:1;padding:9px 0 11px;text-align:center;font-size:12.5px;line-height:1.35;cursor:{{ navCursor }};font-weight:{{ homeWeight }};color:{{ homeColor }};border-top:2px solid {{ homeBar }};margin-top:-1px">Results<div style="font-size:12px;font-weight:400">परिणाम</div></div>
+<div onClick="{{ goCompare }}" aria-disabled="{{ navDead }}" style="flex:1;padding:9px 0 11px;text-align:center;font-size:12.5px;line-height:1.35;cursor:{{ navCursor }};font-weight:{{ compWeight }};color:{{ compColor }};border-top:2px solid {{ compBar }};margin-top:-1px">Compare<div style="font-size:12px;font-weight:400">तुलना</div></div>
+</div>
+</sc-if>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:420,&quot;height&quot;:880},&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;splash&quot;,&quot;home&quot;,&quot;result&quot;,&quot;compare&quot;,&quot;report&quot;],&quot;default&quot;:&quot;splash&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;dataState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;actual report&quot;,&quot;loading&quot;,&quot;no connection&quot;,&quot;offline, no cache&quot;,&quot;server error&quot;,&quot;nothing flagged&quot;,&quot;one flagged&quot;,&quot;ten flagged&quot;,&quot;too little data&quot;,&quot;longest text&quot;],&quot;default&quot;:&quot;actual report&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;retrySucceeds&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;exportMode&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;standard&quot;,&quot;compact&quot;],&quot;default&quot;:&quot;standard&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showHindi&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;showTierWords&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+const TIER = {
+  serious: { word: 'Serious', hi: 'गंभीर',      color: 'oklch(0.45 0.13 32)',  bg: 'oklch(0.977 0.011 32)',  rail: 'oklch(0.45 0.13 32)' },
+  watch:   { word: 'Watch',   hi: 'ध्यान दें',   color: 'oklch(0.48 0.11 68)',  bg: 'oklch(0.977 0.011 68)',  rail: 'oklch(0.48 0.11 68)' },
+  slight:  { word: 'Slight',  hi: 'थोड़ा अधिक', color: 'oklch(0.47 0.09 234)', bg: 'oklch(0.977 0.011 234)', rail: 'oklch(0.47 0.09 234)' },
+  normal:  { word: '',         color: '#5c7a86',              bg: '#fff',                 rail: 'transparent' }
+};
+
+const DATA = [
+  ['Sugar', 'शर्करा', 'Blood Sugar', [
+    ['Fasting Blood Glucose', 'खाली पेट रक्त शर्करा', '99', 99, 'mg/dL', '70 – 100', 'normal', '96', 96],
+    ['Post-Prandial Glucose', 'भोजन के बाद शर्करा', '139', 139, 'mg/dL', '< 140', 'normal', '134', 134],
+    ['HbA1c', 'तीन महीने की औसत शर्करा', '7.4', 7.4, '%', '4.0 – 5.6', 'serious', '6.8', 6.8],
+    ['Random Blood Sugar', 'किसी भी समय रक्त शर्करा', '126', 126, 'mg/dL', '< 140', 'normal', null, null],
+    ['Fasting Insulin', 'खाली पेट इंसुलिन', '9.8', 9.8, 'µIU/mL', '2.6 – 24.9', 'normal', null, null]
+  ]],
+  ['Liver', 'यकृत', 'Liver Function Test', [
+    ['SGPT (ALT)', 'एस-जी-पी-टी', '62', 62, 'U/L', '7 – 56', 'watch', '48', 48],
+    ['SGOT (AST)', 'एस-जी-ओ-टी', '41', 41, 'U/L', '8 – 48', 'normal', '36', 36],
+    ['Total Bilirubin', 'कुल बिलीरुबिन', '0.8', 0.8, 'mg/dL', '0.3 – 1.2', 'normal', '0.7', 0.7],
+    ['Direct Bilirubin', 'प्रत्यक्ष बिलीरुबिन', '0.2', 0.2, 'mg/dL', '0.0 – 0.3', 'normal', null, null],
+    ['Alkaline Phosphatase', 'क्षारीय फॉस्फेटेज़', '96', 96, 'U/L', '44 – 147', 'normal', '102', 102],
+    ['Total Protein', 'कुल प्रोटीन', '7.2', 7.2, 'g/dL', '6.4 – 8.3', 'normal', null, null],
+    ['Serum Albumin', 'सीरम एल्बुमिन', '4.3', 4.3, 'g/dL', '3.5 – 5.2', 'normal', null, null]
+  ]],
+  ['Thyroid', 'थायरॉइड', 'Thyroid Profile', [
+    ['TSH', 'टी-एस-एच', '5.1', 5.1, 'µIU/mL', '0.4 – 4.5', 'slight', '4.2', 4.2],
+    ['Free T4', 'फ्री टी-4', '1.1', 1.1, 'ng/dL', '0.8 – 1.8', 'normal', '1.2', 1.2],
+    ['Free T3', 'फ्री टी-3', '3.1', 3.1, 'pg/mL', '2.3 – 4.2', 'normal', '3.0', 3.0],
+    ['Anti-TPO Antibody', 'एंटी-टी-पी-ओ प्रतिरक्षी', '18', 18, 'IU/mL', '< 34', 'normal', null, null]
+  ]],
+  ['Kidney', 'गुर्दा', 'Kidney Function Test', [
+    ['eGFR', 'ई-जी-एफ-आर (छानने की दर)', '74', 74, 'mL/min', '≥ 90', 'watch', '82', 82],
+    ['Serum Creatinine', 'सीरम क्रिएटिनिन', '0.9', 0.9, 'mg/dL', '0.5 – 1.1', 'normal', '0.9', 0.9],
+    ['Blood Urea', 'रक्त यूरिया', '28', 28, 'mg/dL', '17 – 43', 'normal', '26', 26],
+    ['Uric Acid', 'यूरिक अम्ल', '4.8', 4.8, 'mg/dL', '2.6 – 6.0', 'normal', '5.1', 5.1],
+    ['Sodium', 'सोडियम', '139', 139, 'mEq/L', '135 – 145', 'normal', null, null],
+    ['Potassium', 'पोटैशियम', '4.2', 4.2, 'mEq/L', '3.5 – 5.1', 'normal', null, null]
+  ]],
+  ['Blood Count', 'रक्त गणना', 'Complete Blood Count', [
+    ['Haemoglobin', 'हीमोग्लोबिन', '12.4', 12.4, 'g/dL', '12.0 – 15.5', 'normal', '12.1', 12.1],
+    ['Total WBC Count', 'कुल श्वेत रक्त कोशिकाएँ', '7,200', 7200, '/µL', '4,000 – 11,000', 'normal', '6,800', 6800],
+    ['Platelet Count', 'प्लेटलेट संख्या', '2.45', 2.45, 'lakh/µL', '1.50 – 4.10', 'normal', '2.60', 2.60],
+    ['RBC Count', 'लाल रक्त कोशिकाएँ', '4.50', 4.50, 'mn/µL', '3.80 – 4.80', 'normal', '4.42', 4.42],
+    ['PCV (Haematocrit)', 'पी-सी-वी', '38.6', 38.6, '%', '36 – 46', 'normal', '37.9', 37.9],
+    ['MCV', 'एम-सी-वी', '85.8', 85.8, 'fL', '80 – 100', 'normal', null, null],
+    ['MCH', 'एम-सी-एच', '27.6', 27.6, 'pg', '27 – 32', 'normal', null, null],
+    ['ESR', 'ई-एस-आर', '22', 22, 'mm/hr', '0 – 29', 'normal', null, null]
+  ]],
+  ['Lipids', 'वसा', 'Lipid Profile', [
+    ['Total Cholesterol', 'कुल कोलेस्ट्रॉल', '186', 186, 'mg/dL', '< 200', 'normal', '194', 194],
+    ['LDL Cholesterol', 'एल-डी-एल कोलेस्ट्रॉल', '112', 112, 'mg/dL', '< 130', 'normal', '118', 118],
+    ['HDL Cholesterol', 'एच-डी-एल कोलेस्ट्रॉल', '48', 48, 'mg/dL', '> 40', 'normal', '46', 46],
+    ['Triglycerides', 'ट्राइग्लिसराइड्स', '142', 142, 'mg/dL', '< 150', 'normal', '156', 156],
+    ['VLDL Cholesterol', 'वी-एल-डी-एल कोलेस्ट्रॉल', '28', 28, 'mg/dL', '< 30', 'normal', '31', 31],
+    ['Non-HDL Cholesterol', 'नॉन-एच-डी-एल कोलेस्ट्रॉल', '138', 138, 'mg/dL', '< 160', 'normal', null, null]
+  ]],
+  ['Vitamins', 'विटामिन', 'Vitamins & Minerals', [
+    ['Vitamin D (25-OH)', 'विटामिन डी', '32', 32, 'ng/mL', '30 – 100', 'normal', '24', 24],
+    ['Vitamin B12', 'विटामिन बी-12', '342', 342, 'pg/mL', '211 – 911', 'normal', '298', 298],
+    ['Serum Iron', 'सीरम आयरन', '82', 82, 'µg/dL', '50 – 170', 'normal', '78', 78],
+    ['Ferritin', 'फेरिटिन', '46', 46, 'ng/mL', '13 – 150', 'normal', '52', 52],
+    ['Folate', 'फोलेट', '8.4', 8.4, 'ng/mL', '3.1 – 20.0', 'normal', null, null],
+    ['Serum Calcium', 'सीरम कैल्शियम', '9.2', 9.2, 'mg/dL', '8.6 – 10.2', 'normal', null, null]
+  ]]
+];
+
+const DETAIL = {
+  'HbA1c': {
+    measures: 'HbA1c shows the average level of sugar in your blood over the past three months. One meal or one day does not change it.',
+    measuresHi: 'HbA1c पिछले तीन महीनों में आपके खून में शर्करा का औसत स्तर बताता है। एक भोजन या एक दिन से यह नहीं बदलता।',
+    status: 'Your value is above the normal range of 4.0 – 5.6%.',
+    statusHi: 'आपका मान सामान्य सीमा 4.0 – 5.6% से ऊपर है।',
+    change: 'It was 6.8% in June. It is 7.4% now. The number has gone up by 0.6.',
+    scale: [4, 12], band: [4.0, 5.6], bandLabel: 'normal 4.0 – 5.6'
+  },
+  'SGPT (ALT)': {
+    measures: 'SGPT is an enzyme that lives inside liver cells. More of it appears in the blood when those cells are under strain.',
+    measuresHi: 'एस-जी-पी-टी यकृत की कोशिकाओं के भीतर बनने वाला एंज़ाइम है। कोशिकाओं पर दबाव पड़ने पर यह खून में अधिक दिखता है।',
+    status: 'Your value is above the normal range of 7 – 56 U/L.',
+    statusHi: 'आपका मान सामान्य सीमा 7 – 56 U/L से ऊपर है।',
+    change: 'It was 48 U/L in June. It is 62 U/L now. The number has gone up by 14.',
+    scale: [0, 120], band: [7, 56], bandLabel: 'normal 7 – 56'
+  },
+  'TSH': {
+    measures: 'TSH is the signal the brain sends to the thyroid gland. It rises when the gland is being asked to work harder.',
+    measuresHi: 'टी-एस-एच वह संकेत है जो मस्तिष्क थायरॉइड ग्रंथि को भेजता है। ग्रंथि पर अधिक ज़ोर पड़ने पर यह बढ़ता है।',
+    status: 'Your value is just above the normal range of 0.4 – 4.5 µIU/mL.',
+    statusHi: 'आपका मान सामान्य सीमा 0.4 – 4.5 µIU/mL से थोड़ा ऊपर है।',
+    change: 'It was 4.2 µIU/mL in June. It is 5.1 µIU/mL now. The number has gone up by 0.9.',
+    scale: [0, 10], band: [0.4, 4.5], bandLabel: 'normal 0.4 – 4.5'
+  },
+  'eGFR': {
+    measures: 'eGFR is an estimate of how much blood your kidneys filter each minute. Higher numbers mean more filtering.',
+    measuresHi: 'ई-जी-एफ-आर बताता है कि आपके गुर्दे हर मिनट कितना खून छानते हैं। अधिक मान का अर्थ अधिक छनाई है।',
+    status: 'Your value is below the normal range of 90 mL/min and above.',
+    statusHi: 'आपका मान सामान्य सीमा 90 mL/min से नीचे है।',
+    change: 'It was 82 mL/min in June. It is 74 mL/min now. The number has gone down by 8.',
+    scale: [30, 120], band: [90, 120], bandLabel: 'normal ≥ 90'
+  }
+};
+
+const LONGEST = {
+  name: 'Alkaline Phosphatase (Serum, ALP) — Bone Isoenzyme Fraction',
+  hi: 'क्षारीय फॉस्फेटेज़ (सीरम) — अस्थि आइसोएंज़ाइम अंश की मात्रा',
+  value: '1,24,500', unit: 'lakh/µL', range: '1,10,000 – 1,50,000', prev: '1,18,400'
+};
+
+const SCENARIOS = {
+  'actual report': {},
+  'loading': {},
+  'no connection': {},
+  'too little data': {},
+  'longest text': {},
+  'one flagged': { 'SGPT (ALT)': 'normal', 'TSH': 'normal', 'eGFR': 'normal' },
+  'ten flagged': {
+    'Serum Creatinine':  { tier: 'serious', value: '1.6',  num: 1.6,  prev: '1.1',  prevNum: 1.1 },
+    'Haemoglobin':       { tier: 'watch',   value: '10.8', num: 10.8, prev: '12.1', prevNum: 12.1 },
+    'LDL Cholesterol':   { tier: 'watch',   value: '164',  num: 164,  prev: '118',  prevNum: 118 },
+    'Platelet Count':    { tier: 'watch',   value: '1.10', num: 1.10, prev: '2.60', prevNum: 2.60 },
+    'Total Cholesterol': { tier: 'slight',  value: '214',  num: 214,  prev: '194',  prevNum: 194 },
+    'Vitamin D (25-OH)': { tier: 'slight',  value: '18',   num: 18,   prev: '24',   prevNum: 24 }
+  },
+  'nothing flagged': { 'HbA1c': 'normal', 'SGPT (ALT)': 'normal', 'TSH': 'normal', 'eGFR': 'normal' }
+};
+const ovTier = v => (v && typeof v === 'object') ? v.tier : v;
+const PRI = { serious: 0, watch: 1, slight: 2, normal: 3 };
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { screen: props.startScreen || 'splash', active: 'HbA1c' };
+  }
+
+  componentDidMount() {
+    if (this.state.screen === 'splash' && !this.props.exportMode) {
+      this._t = setTimeout(() => {
+        if (this.state.screen === 'splash') this.setState({ screen: 'home' });
+      }, 1700);
+    }
+  }
+
+  componentWillUnmount() { clearTimeout(this._t); }
+
+  componentDidUpdate(prev) {
+    if (prev.startScreen !== this.props.startScreen && this.props.startScreen) {
+      this.setState({ screen: this.props.startScreen });
+    }
+    if (prev.dataState !== this.props.dataState) {
+      if (this._r) { clearTimeout(this._r); this._r = null; }
+      this.setState({ retrying: false, retryCleared: false });
+    }
+  }
+
+  go(screen) { this.setState({ screen }); }
+
+  renderVals() {
+    const dense = (this.props.density || 'standard') === 'compact';
+    const padY = dense ? '6px' : '9px';
+    const showHindi = this.props.showHindi !== false;
+    const showWords = this.props.showTierWords !== false;
+    const screen = this.state.screen;
+    const ex = !!this.props.exportMode;
+    const st = this.props.dataState || 'actual report';
+    const OVER = SCENARIOS[st] || {};
+    const cleared = !!this.state.retryCleared;
+    const noCache = st === 'offline, no cache' && !cleared;
+    const serverErr = st === 'server error' && !cleared;
+    const phase = (st === 'loading' || !!this.state.retrying)
+      ? 'loading'
+      : ((noCache || serverErr) ? 'blocked' : 'list');
+    const isBlocked = phase === 'blocked';
+    const isLoading = phase === 'loading';
+    const isOffline = st === 'no connection';
+    const sparse = st === 'too little data';
+    const longest = st === 'longest text';
+    const SRC = sparse
+      ? [[DATA[0][0], DATA[0][1], DATA[0][2], DATA[0][3].slice(0, 3)]]
+      : DATA;
+
+    const total = SRC.reduce((n, g) => n + g[3].length, 0);
+    const nGroups = SRC.length;
+    const flat = [];
+    SRC.forEach(([, , , rows]) => rows.forEach(r => {
+      const tier = OVER[r[0]] !== undefined ? ovTier(OVER[r[0]]) : r[6];
+      if (tier !== 'normal') flat.push({ name: r[0], tier });
+    }));
+    flat.sort((a, b) => PRI[a.tier] - PRI[b.tier]);
+    const nf = flat.length;
+    const promptName = nf ? flat[0].name : null;
+
+    const flaggedRows = [];
+    const groups = SRC.map(([name, hi, reportName, rows]) => {
+      const flagged = rows.filter(r => (OVER[r[0]] !== undefined ? ovTier(OVER[r[0]]) : r[6]) !== 'normal').length;
+      return {
+        name, hi, reportName,
+        countLabel: flagged ? flagged + ' outside range' : rows.length + ' results',
+        rows: rows.map(([rn, rhi, value, num, unit, range, tier0, prev, prevNum]) => {
+          const ov = OVER[rn];
+          const tier = ov !== undefined ? ovTier(ov) : tier0;
+          if (ov && typeof ov === 'object') {
+            value = ov.value; num = ov.num;
+            if (prev !== null) { prev = ov.prev; prevNum = ov.prevNum; }
+          }
+          const t = TIER[tier];
+          const hasPrev = prev !== null;
+          let dirGlyph = '', dirColor = '#51707c';
+          if (hasPrev) {
+            if (num > prevNum) { dirGlyph = '▲'; }
+            else if (num < prevNum) { dirGlyph = '▼'; }
+            else { dirGlyph = '='; }
+            if (tier !== 'normal' && num !== prevNum) dirColor = t.color;
+          }
+          const tappable = tier !== 'normal';
+          const row = {
+            name: longest ? LONGEST.name : rn,
+            hi: showHindi ? (longest ? LONGEST.hi : rhi) : '',
+            value: longest ? LONGEST.value : value,
+            unit: longest ? LONGEST.unit : unit,
+            range: longest ? LONGEST.range : range,
+            prev: longest && hasPrev ? LONGEST.prev : prev,
+            tier,
+            hasPrev, noPrev: !hasPrev, isPrompt: rn === promptName,
+            colSpan: longest ? '1fr 78px 48px' : '1fr 64px 48px',
+            cmpCols: longest ? '1fr 64px 16px 66px' : '1fr 46px 16px 48px',
+            dirGlyph, dirColor,
+            railColor: t.rail, tierColor: t.color, tierHi: t.hi,
+            tierWord: showWords ? t.word : '',
+            rowBg: tier === 'normal' ? '#fff' : t.bg,
+            chev: tappable ? '›' : '',
+            cursor: tappable ? 'pointer' : 'default',
+            padY,
+            group: name,
+            open: tappable ? () => this.setState({ screen: 'result', active: rn }) : null
+          };
+          if (tappable) flaggedRows.push(row);
+          return row;
+        })
+      };
+    });
+
+    flaggedRows.sort((a, b) => PRI[a.tier] - PRI[b.tier]);
+    const HI_NUM = ['शून्य','एक','दो','तीन','चार','पाँच','छह','सात','आठ','नौ','दस'];
+    const names = flat.map(r => r.name);
+    const promptNames = names.length > 1
+      ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1]
+      : names[0];
+
+    let res = null;
+    for (const [, , , rows] of DATA) {
+      for (const r of rows) {
+        if (r[0] === this.state.active) {
+          const d = DETAIL[r[0]], t = TIER[r[6]];
+          const [lo, hi2] = d.scale, span = hi2 - lo;
+          const pct = v => Math.max(0, Math.min(100, ((v - lo) / span) * 100));
+          res = {
+            name: r[0], hi: r[1], value: r[2], unit: r[4], range: r[5], prev: r[7],
+            measures: d.measures, measuresHi: d.measuresHi,
+            statusLine: d.status, statusHi: d.statusHi, changeLine: d.change,
+            tierColor: t.color, tierBg: t.bg, tierWord: t.word, tierHi: t.hi,
+            dirGlyph: r[3] > r[8] ? '▲' : r[3] < r[8] ? '▼' : '=',
+            dirColor: t.color,
+            scaleMin: String(lo), scaleMax: String(hi2), bandLabel: d.bandLabel,
+            bandLeft: pct(d.band[0]).toFixed(1) + '%',
+            bandWidth: (pct(d.band[1]) - pct(d.band[0])).toFixed(1) + '%',
+            markLeft: 'calc(' + pct(r[3]).toFixed(1) + '% - 1px)'
+          };
+        }
+      }
+    }
+
+    const blockedOrLoading = isBlocked || isLoading;
+    const eff = (blockedOrLoading && screen !== 'splash') ? 'home' : screen;
+    const isHome = eff === 'home';
+    const isCompare = eff === 'compare';
+    return {
+      groups, res, isHome, isCompare,
+      isLoading, isOffline, sparse, isBlocked,
+      showList: phase === 'list',
+      blockedTitle: noCache
+        ? 'Your report is not on this phone yet'
+        : 'We could not reach the lab',
+      blockedTitleHi: noCache
+        ? 'आपकी रिपोर्ट अभी इस फ़ोन में नहीं है'
+        : 'हम प्रयोगशाला तक नहीं पहुँच सके',
+      blockedBody: noCache
+        ? 'It has to be fetched once before it can be read offline. Connect to the internet and try again.'
+        : 'Nothing is wrong with your results — the connection to the lab failed. Your report is safe and unchanged.',
+      blockedBodyHi: noCache
+        ? 'इसे एक बार डाउनलोड करना होगा, फिर यह बिना इंटरनेट भी खुलेगी। इंटरनेट से जुड़कर दोबारा कोशिश करें।'
+        : 'आपकी जाँचों में कोई गड़बड़ी नहीं है — प्रयोगशाला से संपर्क नहीं बन पाया। आपकी रिपोर्ट सुरक्षित है।',
+      blockedMeta: (this.state.attempts || 1) > 1
+        ? 'Tried ' + this.state.attempts + ' times, last just now · '
+          + (HI_NUM[this.state.attempts] || this.state.attempts) + ' बार कोशिश की, अंतिम अभी'
+        : (noCache
+          ? 'Nothing has been saved to read offline · बिना इंटरनेट पढ़ने के लिए कुछ सुरक्षित नहीं है'
+          : 'Last tried just now · कुछ देर पहले'),
+      offlineLine: 'No connection. Showing the copy saved on this phone.',
+      offlineLineHi: 'कनेक्शन नहीं है। इस फ़ोन में सुरक्षित प्रति दिखाई जा रही है।',
+      offlineStamp: 'Saved 11 Sep 2026, 17:52',
+      flaggedRows: flaggedRows.slice(0, 5),
+      hasFlagged: nf > 0,
+      noneFlagged: nf === 0,
+      flaggedHeading: nf === 1 ? 'One to look at' : nf + ' to look at',
+      flaggedHeadingHi: (HI_NUM[nf] || nf) + ' पर ध्यान दें',
+      flaggedRatio: nf + ' / ' + total,
+      allResultsLine: total + (nGroups === 1
+        ? ' results in 1 body system · 1 तंत्र की ' + total + ' जाँचें'
+        : ' results across ' + nGroups + ' body systems · ' + nGroups + ' तंत्रों की ' + total + ' जाँचें'),
+      sparseNote: 'Only ' + total + (total === 1 ? ' result is' : ' results are') + ' in this report. Nothing earlier is saved on this phone.',
+      sparseNoteHi: 'इस रिपोर्ट में केवल ' + total + ' जाँचें हैं। इससे पुराना कुछ इस फ़ोन में नहीं है।',
+      noPrevLine: (() => {
+        const n = groups.reduce((a, g) => a + (g.rows || []).filter(r => r.noPrev).length, 0);
+        if (!n) return 'हर जाँच की पिछली रिपोर्ट मौजूद है।';
+        return n + ' जाँचों की पिछली रिपोर्ट नहीं है — वहाँ “no previous data” लिखा है।';
+      })(),
+      hasMoreFlagged: nf > 5,
+      moreFlaggedLine: (nf - 5 === 1 ? '1 more is' : (nf - 5) + ' more are') + ' listed in the panels below · बाकी नीचे दिए हैं',
+      promptRows: flaggedRows.slice(1, 4),
+      hasOthers: nf > 1,
+      promptCount: nf === 1
+        ? '1 result is outside the normal range'
+        : nf + ' results are outside the normal range',
+      promptCountHi: nf === 1
+        ? 'एक जाँच सामान्य सीमा से बाहर है'
+        : (HI_NUM[nf] || nf) + ' जाँचें सामान्य सीमा से बाहर हैं',
+      promptMore: nf > 4,
+      promptMoreLine: (nf - 4 === 1 ? '1 more is' : (nf - 4) + ' more are') + ' marked in the list below · बाकी नीचे चिह्नित हैं',
+      normalLine: 'All ' + total + ' results are inside the normal range.',
+      normalLineHi: 'सभी ' + total + ' जाँचें सामान्य सीमा के भीतर हैं।',
+      outerMinH: ex ? '0' : '100vh',
+      outerPad: ex ? '0' : '28px 20px 40px',
+      outerBg: ex ? 'transparent' : '#dfe7ea',
+      phoneH: ex ? 'auto' : '800px',
+      scFlex: ex ? 'none' : '1',
+      scOv: ex ? 'visible' : 'auto',
+      splashMinH: ex ? '760px' : '100%',
+      isResult: eff === 'result', isReport: eff === 'report', isSplash: eff === 'splash',
+      showNav: isHome || isCompare,
+      navDead: blockedOrLoading,
+      navCursor: blockedOrLoading ? 'default' : 'pointer',
+      retry: () => {
+        if (this._r) return;
+        this.setState({ retrying: true });
+        this._r = setTimeout(() => {
+          this._r = null;
+          this.setState(s => ({
+            retrying: false,
+            retryCleared: !!this.props.retrySucceeds,
+            attempts: (s.attempts || 1) + 1,
+            screen: 'home'
+          }));
+        }, 1700);
+      },
+      homeWeight: isHome ? 600 : 400, compWeight: isCompare ? 600 : 400,
+      homeColor: blockedOrLoading ? '#7d939c' : (isHome ? '#12242d' : '#51707c'),
+      compColor: blockedOrLoading ? '#7d939c' : (isCompare ? '#12242d' : '#51707c'),
+      homeBar: isHome ? 'oklch(0.44 0.085 234)' : 'transparent', compBar: isCompare ? 'oklch(0.44 0.085 234)' : 'transparent',
+      goHome: blockedOrLoading ? null : () => this.go('home'),
+      goCompare: blockedOrLoading ? null : () => this.go('compare'),
+      goReport: () => this.go('report')
+    };
+  }
+}
+</script>
 </body>
 </html>
