@@ -1,0 +1,15 @@
+node_modules
+.expo
+.expo-shared
+dist
+build
+*.log
+.DS_Store
+.git
+.gitignore
+README.md
+.env.local
+.env.*.local
+.vercel
+ios
+android
