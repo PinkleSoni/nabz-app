@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabz Health Report App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #DFE7EA;
+            color: #12242D;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            font-size: 48px;
+            color: #3B5BA6;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #51707C;
+            margin-bottom: 30px;
+        }
+        .subtitle-hi {
+            font-size: 16px;
+            color: #51707C;
+            margin-bottom: 30px;
+        }
+        .status {
+            background: #E8F4F1;
+            color: #1A6B5A;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #F3F8FA;
+            border-radius: 8px;
+            border-left: 4px solid #3B5BA6;
+        }
+        .section h2 {
+            color: #12242D;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section li {
+            padding: 8px 0;
+            color: #51707C;
+        }
+        .section li:before {
+            content: "✓ ";
+            color: #3B5BA6;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #DBE4E8;
+            color: #51707C;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #3B5BA6;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nabz</h1>
+        <p class="subtitle">Your laboratory report, read in plain words.</p>
+        <p class="subtitle-hi">आपकी लैब रिपोर्ट, आसान शब्दों में।</p>
+
+        <div class="status">✅ App Deployed & Running</div>
+
+        <div class="section">
+            <h2>About Nabz</h2>
+            <p>Nabz is a React Native health report application that makes laboratory test results easy to understand. We present complex medical data in simple, actionable insights available in both English and Hindi.</p>
+        </div>
+
+        <div class="section">
+            <h2>Features</h2>
+            <ul>
+                <li>View all your laboratory reports in one place</li>
+                <li>Easily identify abnormal test results with flagging</li>
+                <li>Bilingual support (English & Hindi)</li>
+                <li>Responsive design for mobile and desktop</li>
+                <li>Categorized test results by type</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li>React Native - Cross-platform mobile framework</li>
+                <li>Expo - React Native platform</li>
+                <li>React Navigation - Navigation management</li>
+                <li>Vercel - Hosting & deployment</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Project Status</h2>
+            <p>✅ Nabz Health Report app is deployed and live!</p>
+            <p style="margin-top: 10px;">
+                Repository: <a href="https://github.com/PinkleSoni/nabz-app" target="_blank">github.com/PinkleSoni/nabz-app</a>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>🏥 Nabz - Making Lab Reports Simple & Understandable</p>
+            <p style="margin-top: 10px;">Deployed on <a href="https://vercel.com" target="_blank">Vercel</a> | Built with React Native + Expo</p>
+        </div>
+    </div>
+</body>
+</html>
