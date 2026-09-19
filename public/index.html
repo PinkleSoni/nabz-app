@@ -16,7 +16,7 @@ a:hover{color:oklch(0.36 0.09 234)}
 @keyframes nabzload{from{width:0}to{width:100%}}
 </style></helmet>
 
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12242d"></rect><text x="50" y="58" font-family="system-ui, sans-serif" font-size="26" font-weight="600" fill="#ffffff" text-anchor="middle">Nabz</text><rect x="41" y="66" width="18" height="2.5" fill="#3b82a6"></rect></svg></template>
+<template id="__bundler_thumbnail" data-bg-color="#12242d"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12242d"></rect><text x="50" y="58" font-family="system-ui, sans-serif" font-size="26" font-weight="600" fill="#ffffff" text-anchor="middle">Nabz</text><rect x="41" y="66" width="18" height="2.5" fill="#3b82a6"></rect></svg></template>
 
 <div style="min-height:{{ outerMinH }};display:flex;align-items:flex-start;justify-content:center;padding:{{ outerPad }};background:{{ outerBg }}">
 <div style="width:360px;height:{{ phoneH }};flex:none;background:#ffffff;border:1px solid #c6d3d8;display:flex;flex-direction:column;overflow:hidden;position:relative;color:#12242d">
@@ -198,39 +198,54 @@ a:hover{color:oklch(0.36 0.09 234)}
 <div style="padding:18px 14px 0">
 <div style="font-size:21px;font-weight:600;letter-spacing:-0.01em;line-height:1.2">{{ res.name }}</div>
 <div style="font-size:13.5px;color:#51707c;margin-top:3px">{{ res.hi }}</div>
-<div style="font-size:13.5px;line-height:1.55;margin-top:12px;color:#28424d">{{ res.measures }}</div>
-<div style="font-size:13px;line-height:1.65;margin-top:6px;color:#3f5f6b">{{ res.measuresHi }}</div>
 </div>
 
-<div style="margin:16px 14px 0;border:1px solid {{ res.tierColor }};background:{{ res.tierBg }}">
-<div style="padding:10px 12px 11px">
+<div style="margin:16px 14px 0;border:1px solid {{ res.tierColor }};background:{{ res.tierBg }};padding:12px 14px 16px">
 <div style="display:flex;align-items:baseline;gap:7px">
 <div style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:{{ res.tierColor }}">{{ res.tierWord }}</div>
 <div style="font-size:12.5px;color:{{ res.tierColor }}">{{ res.tierHi }}</div>
 </div>
-<div style="display:flex;align-items:flex-end;gap:8px;margin-top:6px">
-<div style="font-size:32px;font-weight:600;line-height:1;letter-spacing:-0.02em">{{ res.value }}</div>
-<div style="font-size:13px;color:#3f5f6b;padding-bottom:3px">{{ res.unit }}</div>
+<div style="display:flex;align-items:flex-end;gap:8px;margin-top:7px">
+<div style="font-size:38px;font-weight:600;line-height:1;letter-spacing:-0.025em">{{ res.value }}</div>
+<div style="font-size:14px;color:#3f5f6b;padding-bottom:4px">{{ res.unit }}</div>
 </div>
-<div style="font-size:12.5px;color:#28424d;margin-top:8px;line-height:1.5">{{ res.statusLine }}</div>
-<div style="font-size:12.5px;color:#3f5f6b;margin-top:3px;line-height:1.6">{{ res.statusHi }}</div>
+
+<div style="position:relative;height:16px;margin-top:22px">
+<div style="position:absolute;left:0;right:0;top:4px;height:10px;background:#e2ebee;border:1px solid #cfdce1"></div>
+<div style="position:absolute;top:4px;height:10px;background:#cfe3dd;border:1px solid #9fc4ba;left:{{ res.bandLeft }};width:{{ res.bandWidth }}"></div>
+<div style="position:absolute;top:0;width:3px;height:18px;background:{{ res.tierColor }};left:{{ res.markLeft }}"></div>
+</div>
+<div style="font-size:11.5px;color:#3f5f6b;margin-top:9px;line-height:1.5">Normal range · सामान्य सीमा: {{ res.range }} {{ res.unit }}</div>
+
+<div style="margin-top:13px;padding-top:11px;border-top:1px solid {{ res.tierColor }}">
+<div style="font-size:13.5px;font-weight:600;line-height:1.45;color:#28424d">{{ res.gapLine }}</div>
+<div style="font-size:12.5px;line-height:1.6;color:#3f5f6b;margin-top:3px">{{ res.gapHi }}</div>
 </div>
 </div>
 
-<div style="margin:18px 14px 0">
-<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:9px">
-<div style="font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#51707c">Where your number sits</div>
-<div style="font-size:12.5px;color:#51707c">आपका मान कहाँ है</div>
+<div style="margin:16px 14px 0;padding:11px 12px;background:#edf3f5">
+<div style="font-size:12.5px;line-height:1.5;color:#28424d">One measurement on its own does not name a condition. A doctor reads it with your other results and your history.</div>
+<div style="font-size:12px;line-height:1.6;color:#5c7a86;margin-top:4px">अकेली एक जाँच किसी रोग का नाम नहीं बताती। डॉक्टर इसे आपकी बाकी जाँचों और इतिहास के साथ मिलाकर पढ़ते हैं।</div>
 </div>
-<div style="position:relative;height:34px">
-<div style="position:absolute;left:0;right:0;top:14px;height:8px;background:#e2ebee;border:1px solid #cfdce1"></div>
-<div style="position:absolute;top:14px;height:8px;background:#cfe3dd;border:1px solid #9fc4ba;left:{{ res.bandLeft }};width:{{ res.bandWidth }}"></div>
-<div style="position:absolute;top:6px;width:2px;height:24px;background:{{ res.tierColor }};left:{{ res.markLeft }}"></div>
+
+<div style="margin:18px 14px 0;border-top:1px solid #dbe4e8;padding-top:13px">
+<div onClick="{{ toggleWhat }}" role="button" tabindex="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;min-height:44px" style-hover="opacity:0.7">
+<div style="flex:1;min-width:0">
+<div style="font-size:13.5px;font-weight:600;color:#28424d;line-height:1.3">What this test measures</div>
+<div style="font-size:12px;color:#5c7a86;line-height:1.4;margin-top:2px">यह जाँच क्या मापती है</div>
 </div>
-<div style="display:flex;justify-content:space-between;gap:8px;font-size:10.5px;color:#51707c;margin-top:-2px;white-space:nowrap">
-<span style="flex:none">{{ res.scaleMin }}</span><span style="flex:none">{{ res.scaleMax }}</span>
+<div style="flex:none;width:28px;height:28px;border:1px solid #cfdce1;background:#fff;display:flex;align-items:center;justify-content:center">
+<div style="width:7px;height:7px;border-right:1.5px solid oklch(0.44 0.085 234);border-bottom:1.5px solid oklch(0.44 0.085 234);transform:{{ whatRot }};transition:transform .2s ease;margin-top:{{ whatNudge }}"></div>
 </div>
-<div style="font-size:12px;color:#3f5f6b;margin-top:8px;line-height:1.5">Normal range · सामान्य सीमा: {{ res.range }} {{ res.unit }}</div>
+</div>
+<sc-if value="{{ openWhat }}" hint-placeholder-val="{{ true }}">
+<div style="padding-top:9px">
+<div style="font-size:13.5px;line-height:1.55;color:#28424d">{{ res.measures }}</div>
+<div style="font-size:13px;line-height:1.65;margin-top:6px;color:#3f5f6b">{{ res.measuresHi }}</div>
+<div style="font-size:12.5px;line-height:1.5;color:#28424d;margin-top:10px">{{ res.statusLine }}</div>
+<div style="font-size:12px;line-height:1.6;color:#3f5f6b;margin-top:3px">{{ res.statusHi }}</div>
+</div>
+</sc-if>
 </div>
 
 <div style="margin:20px 14px 0;border-top:1px solid #dbe4e8;padding-top:14px">
@@ -251,19 +266,25 @@ a:hover{color:oklch(0.36 0.09 234)}
 </div>
 </div>
 
-<div style="margin:18px 14px 0;border:1px solid #dbe4e8;padding:11px 12px 12px">
-<div style="font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:#5c7a86">How this explanation was written</div>
-<div style="font-size:12px;color:#5c7a86;margin-top:2px">यह व्याख्या कैसे लिखी गई</div>
-<div style="font-size:12.5px;line-height:1.55;color:#28424d;margin-top:8px">The plain-English and Hindi wording above is machine-written from the test name, then checked by a doctor before release. Your own numbers are never sent anywhere to produce it.</div>
-<div style="font-size:12px;line-height:1.6;color:#3f5f6b;margin-top:5px">ऊपर की आसान भाषा मशीन से लिखी गई है और जारी करने से पहले डॉक्टर ने जाँची है। आपके मान इसके लिए कहीं नहीं भेजे जाते।</div>
+<div style="margin:16px 14px 0;border-top:1px solid #dbe4e8;padding-top:13px">
+<div onClick="{{ toggleHow }}" role="button" tabindex="0" style="display:flex;align-items:center;gap:12px;cursor:pointer;min-height:44px" style-hover="opacity:0.7">
+<div style="flex:1;min-width:0">
+<div style="font-size:12.5px;color:#51707c;line-height:1.35">How this explanation was written</div>
+<div style="font-size:11.5px;color:#7d939c;line-height:1.4;margin-top:2px">यह व्याख्या कैसे लिखी गई</div>
+</div>
+<div style="flex:none;width:28px;height:28px;display:flex;align-items:center;justify-content:center">
+<div style="width:7px;height:7px;border-right:1.5px solid #7d939c;border-bottom:1.5px solid #7d939c;transform:{{ howRot }};transition:transform .2s ease;margin-top:{{ howNudge }}"></div>
+</div>
+</div>
+<sc-if value="{{ openHow }}" hint-placeholder-val="{{ false }}">
+<div style="padding-top:9px">
+<div style="font-size:12.5px;line-height:1.55;color:#28424d">The plain-English and Hindi wording is machine-written from the test name, then checked by a doctor before release. Your own numbers are never sent anywhere to produce it.</div>
+<div style="font-size:12px;line-height:1.6;color:#3f5f6b;margin-top:5px">आसान भाषा मशीन से लिखी गई है और जारी करने से पहले डॉक्टर ने जाँची है। आपके मान इसके लिए कहीं नहीं भेजे जाते।</div>
 <div style="font-size:12px;line-height:1.55;color:#5c7a86;margin-top:8px">It never reads your values, never ranks your results, never names a condition and never tells you what to do.</div>
 <div style="font-size:12px;line-height:1.6;color:#5c7a86;margin-top:3px">यह आपके मान नहीं पढ़ता, परिणामों को क्रम नहीं देता, किसी रोग का नाम नहीं बताता और कोई सलाह नहीं देता।</div>
 <div style="margin-top:10px;font-size:12px;color:oklch(0.44 0.085 234);cursor:pointer">These words are confusing · ये शब्द समझ नहीं आए</div>
 </div>
-
-<div style="margin:20px 14px 0;padding:11px 12px;background:#edf3f5;border:1px solid #dbe4e8">
-<div style="font-size:12.5px;line-height:1.55;color:#28424d">This is one measurement. It does not name a condition on its own. A doctor reads it together with your other results and your history.</div>
-<div style="font-size:12.5px;line-height:1.65;color:#3f5f6b;margin-top:6px">यह एक ही जाँच का मान है। अकेले यह किसी रोग का नाम नहीं बताता। डॉक्टर इसे आपकी बाकी जाँचों और इतिहास के साथ मिलाकर पढ़ते हैं।</div>
+</sc-if>
 </div>
 
 <div style="height:28px"></div>
@@ -688,11 +709,28 @@ class Component extends DCLogic {
             tierColor: t.color, tierBg: t.bg, tierWord: t.word, tierHi: t.hi,
             dirGlyph: r[3] > r[8] ? '▲' : r[3] < r[8] ? '▼' : '=',
             dirColor: t.color,
-            scaleMin: String(lo), scaleMax: String(hi2), bandLabel: d.bandLabel,
+            bandLabel: d.bandLabel,
             bandLeft: pct(d.band[0]).toFixed(1) + '%',
             bandWidth: (pct(d.band[1]) - pct(d.band[0])).toFixed(1) + '%',
-            markLeft: 'calc(' + pct(r[3]).toFixed(1) + '% - 1px)'
+            markLeft: 'calc(' + pct(r[3]).toFixed(1) + '% - 1px)',
+            markLabelLeft: pct(r[3]).toFixed(1) + '%'
           };
+          const bw = d.band[1] - d.band[0];
+          const over = r[3] > d.band[1] ? r[3] - d.band[1]
+            : (r[3] < d.band[0] ? d.band[0] - r[3] : 0);
+          const round = n => (Math.round(n * 10) / 10).toFixed(1).replace(/\.0$/, '');
+          const amt = round(over) + (r[4] === '%' ? '%' : ' ' + r[4]);
+          if (!over) {
+            res.gapLine = 'Inside the normal range';
+            res.gapHi = 'सामान्य सीमा के भीतर';
+          } else {
+            const soft = over / (bw || 1) < 0.18;
+            const dir = r[3] > d.band[1] ? ['above', 'ऊपर'] : ['below', 'नीचे'];
+            res.gapLine = amt + ' ' + dir[0] + ' the normal range'
+              + (soft ? ' — only just past the edge' : '');
+            res.gapHi = amt + ' सामान्य सीमा से ' + dir[1]
+              + (soft ? ' — बिलकुल थोड़ा बाहर' : '');
+          }
         }
       }
     }
@@ -737,6 +775,14 @@ class Component extends DCLogic {
         : ' results across ' + nGroups + ' body systems · ' + nGroups + ' तंत्रों की ' + total + ' जाँचें'),
       sparseNote: 'Only ' + total + (total === 1 ? ' result is' : ' results are') + ' in this report. Nothing earlier is saved on this phone.',
       sparseNoteHi: 'इस रिपोर्ट में केवल ' + total + ' जाँचें हैं। इससे पुराना कुछ इस फ़ोन में नहीं है।',
+      openWhat: this.state.openWhat !== false,
+      openHow: !!this.state.openHow,
+      whatRot: this.state.openWhat !== false ? 'rotate(-135deg)' : 'rotate(45deg)',
+      howRot: this.state.openHow ? 'rotate(-135deg)' : 'rotate(45deg)',
+      whatNudge: this.state.openWhat !== false ? '2px' : '-2px',
+      howNudge: this.state.openHow ? '2px' : '-2px',
+      toggleWhat: () => this.setState(s => ({ openWhat: s.openWhat === false })),
+      toggleHow: () => this.setState(s => ({ openHow: !s.openHow })),
       noPrevLine: (() => {
         const n = groups.reduce((a, g) => a + (g.rows || []).filter(r => r.noPrev).length, 0);
         if (!n) return 'हर जाँच की पिछली रिपोर्ट मौजूद है।';
